@@ -130,7 +130,7 @@ public class ReportPageTest extends PageTestBase {
 		assertEquals("Испытательная лаборатория ООО \"ТЕХКОНСУР\"",
 				support.findStr(doc,
 						"/html/body/div[@class='tkur-header']/span/text()"));
-		assertEquals("tkur_jacoco / 0.8.15", support.findStr(doc,
+		assertEquals("tkur_jacoco 0.8.15-tkur.4", support.findStr(doc,
 				"//span[@class='tkur-product-name']/text()"));
 		assertEquals("width=device-width, initial-scale=1", support.findStr(doc,
 				"/html/head/meta[@name='viewport']/@content"));

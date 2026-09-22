@@ -124,6 +124,7 @@
   </distributionManagement>
 
   <properties>
+    <tkur.version>0.8.15-tkur.4</tkur.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonatypeOssDistMgmtSnapshotsUrl>https://central.sonatype.com/repository/maven-snapshots/</sonatypeOssDistMgmtSnapshotsUrl>
 

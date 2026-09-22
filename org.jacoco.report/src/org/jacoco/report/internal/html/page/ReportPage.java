@@ -13,6 +13,7 @@
 package org.jacoco.report.internal.html.page;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import org.jacoco.core.JaCoCo;
 import org.jacoco.report.internal.ReportOutputFolder;
@@ -28,6 +29,10 @@ import org.jacoco.report.internal.html.resources.Styles;
  * hierarchy and has a parent page (except the root page).
  */
 public abstract class ReportPage implements ILinkable {
+
+	private static final String TKUR_VERSION = ResourceBundle
+			.getBundle(ReportPage.class.getPackage().getName() + ".tkur")
+			.getString("version");
 
 	private final ReportPage parent;
 
@@ -111,7 +116,7 @@ public abstract class ReportPage implements ILinkable {
 		brand.span("tkur-wordmark")
 				.text("Испытательная лаборатория ООО \"ТЕХКОНСУР\"");
 		final HTMLElement product = brand.div("tkur-product");
-		product.span("tkur-product-name").text("tkur_jacoco / 0.8.15");
+		product.span("tkur-product-name").text("tkur_jacoco " + TKUR_VERSION);
 		product.span("tkur-product-description").text("ОТЧЁТ О ПОКРЫТИИ КОДА");
 		product.span("tkur-created")
 				.text("Сформирован: " + context.getCreationTimestamp());
