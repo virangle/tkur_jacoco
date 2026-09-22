@@ -278,30 +278,29 @@ a:focus-visible {
 
 .tkur-header {
   margin:0 -32px;
-  padding:28px 32px;
+  padding:10px 32px;
   background:#021d59;
-  border-bottom:4px solid #1a9ae2;
+  border-bottom:3px solid #1a9ae2;
   color:#ffffff;
   display:flex;
   justify-content:space-between;
   flex-wrap:wrap;
   align-items:center;
-  gap:24px;
+  gap:16px;
 }
 
 .tkur-wordmark {
-  font-size:24px;
+  font-size:17px;
   font-weight:bold;
   line-height:1.35;
-  max-width:780px;
   flex:1;
 }
 
 .tkur-logo {
-  width:190px;
+  width:120px;
   height:auto;
   flex-shrink:0;
-  padding:12px;
+  padding:6px;
   background:#ffffff;
   border-radius:6px;
 }
@@ -334,14 +333,14 @@ table.coverage td.bar img {
 }
 
 .tkur-product-name {
-  font-size:15px;
+  font-size:12px;
   font-weight:bold;
 }
 
 .tkur-product-description {
-  margin-top:4px;
-  font-size:10px;
-  letter-spacing:1.8px;
+  margin-top:2px;
+  font-size:9px;
+  letter-spacing:1px;
   color:#bfdfff;
 }
 
@@ -474,16 +473,18 @@ pre.source :target {
 
 @media (max-width:900px) {
   body { padding:0 16px 20px; }
-  .tkur-header { margin:0 -16px; padding:24px 16px; }
+  .tkur-header { margin:0 -16px; padding:10px 16px; }
   .breadcrumb { margin:0 -16px 24px; padding:12px 16px; }
   table.coverage { display:block; overflow-x:auto; }
   table.coverage td:first-child { min-width:180px; }
 }
 
 @media (max-width:540px) {
-  .tkur-header { align-items:flex-start; flex-direction:column; gap:10px; }
+  .tkur-header { gap:8px 12px; }
+  .tkur-logo { width:90px; }
   .tkur-product { text-align:left; }
-  .tkur-wordmark { font-size:21px; }
+  .tkur-wordmark { font-size:14px; flex-basis:180px; }
+  .tkur-product-description { display:none !important; }
   .breadcrumb .info { float:none; display:block; margin-bottom:8px; }
   .breadcrumb .info a { margin:0 16px 0 0; }
   h1 { font-size:23px; }
