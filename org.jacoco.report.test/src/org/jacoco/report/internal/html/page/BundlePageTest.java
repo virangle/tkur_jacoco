@@ -86,7 +86,7 @@ public class BundlePageTest extends PageTestBase {
 		page.render();
 
 		final Document doc = support.parse(output.getFile("index.html"));
-		assertEquals("No class files specified.",
+		assertEquals("Файлы классов не указаны.",
 				support.findStr(doc, "/html/body/p"));
 	}
 
@@ -105,7 +105,7 @@ public class BundlePageTest extends PageTestBase {
 
 		final Document doc = support.parse(output.getFile("index.html"));
 		assertEquals(
-				"None of the analyzed classes contain code relevant for code coverage.",
+				"В проанализированных классах нет кода, для которого можно определить покрытие.",
 				support.findStr(doc, "/html/body/p"));
 	}
 

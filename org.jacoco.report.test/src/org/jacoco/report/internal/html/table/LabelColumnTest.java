@@ -78,7 +78,7 @@ public class LabelColumnTest {
 		column.footer(td, new CoverageNodeImpl(ElementType.GROUP, "Foo"),
 				resources, root);
 		final Document doc = parseDoc();
-		assertEquals("Total",
+		assertEquals("Итого",
 				support.findStr(doc, "/html/body/table/tr/td/text()"));
 	}
 

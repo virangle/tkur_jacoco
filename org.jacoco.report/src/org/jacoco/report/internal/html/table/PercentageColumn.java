@@ -79,7 +79,7 @@ public class PercentageColumn implements IColumnRenderer {
 		final ICounter counter = node.getCounter(entity);
 		final int total = counter.getTotalCount();
 		if (total == 0) {
-			td.text("n/a");
+			td.text("не применимо");
 		} else {
 			td.text(format(counter.getCoveredRatio()));
 		}

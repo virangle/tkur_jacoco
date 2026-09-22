@@ -77,7 +77,7 @@ public class BarColumn implements IColumnRenderer {
 			throws IOException {
 		final ICounter counter = total.getCounter(entity);
 		td.text(integerFormat.format(counter.getMissedCount()));
-		td.text(" of ");
+		td.text(" из ");
 		td.text(integerFormat.format(counter.getTotalCount()));
 	}
 

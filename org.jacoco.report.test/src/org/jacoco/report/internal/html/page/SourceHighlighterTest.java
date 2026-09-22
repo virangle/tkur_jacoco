@@ -116,7 +116,7 @@ public class SourceHighlighterTest {
 		sourceHighlighter.highlight(parent.pre(null), source.getLine(1), 1);
 		final Document doc = parseDoc();
 		assertEquals("fc bfc", htmlSupport.findStr(doc, "//pre/span/@class"));
-		assertEquals("All 5 branches covered.",
+		assertEquals("Покрыты все ветви: 5.",
 				htmlSupport.findStr(doc, "//pre/span/@title"));
 	}
 
@@ -127,7 +127,7 @@ public class SourceHighlighterTest {
 		sourceHighlighter.highlight(parent.pre(null), source.getLine(1), 1);
 		final Document doc = parseDoc();
 		assertEquals("pc bpc", htmlSupport.findStr(doc, "//pre/span/@class"));
-		assertEquals("2 of 5 branches missed.",
+		assertEquals("Не покрыто ветвей: 2 из 5.",
 				htmlSupport.findStr(doc, "//pre/span/@title"));
 	}
 
@@ -138,7 +138,7 @@ public class SourceHighlighterTest {
 		sourceHighlighter.highlight(parent.pre(null), source.getLine(1), 1);
 		final Document doc = parseDoc();
 		assertEquals("pc bnc", htmlSupport.findStr(doc, "//pre/span/@class"));
-		assertEquals("All 5 branches missed.",
+		assertEquals("Не покрыта ни одна ветвь. Всего ветвей: 5.",
 				htmlSupport.findStr(doc, "//pre/span/@title"));
 	}
 

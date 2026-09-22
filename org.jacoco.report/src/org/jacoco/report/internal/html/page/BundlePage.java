@@ -90,10 +90,10 @@ public class BundlePage extends TablePage<ICoverageNode> {
 	@Override
 	protected void content(HTMLElement body) throws IOException {
 		if (bundle.getPackages().isEmpty()) {
-			body.p().text("No class files specified.");
+			body.p().text("Файлы классов не указаны.");
 		} else if (!bundle.containsCode()) {
 			body.p().text(
-					"None of the analyzed classes contain code relevant for code coverage.");
+					"В проанализированных классах нет кода, для которого можно определить покрытие.");
 		} else {
 			super.content(body);
 		}

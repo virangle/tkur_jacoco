@@ -101,6 +101,7 @@ public class Resources {
 	 */
 	public void copyResources() throws IOException {
 		copyResource(STYLESHEET);
+		copyResource("tkur.svg");
 		copyResource("report.gif");
 		copyResource("group.gif");
 		copyResource("bundle.gif");

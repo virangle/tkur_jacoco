@@ -91,7 +91,7 @@ public class PercentageColumnTest {
 		final ITableItem item = createItem(0, 0);
 		column.item(td, item, resources, root);
 		final Document doc = parseDoc();
-		assertEquals("n/a",
+		assertEquals("не применимо",
 				support.findStr(doc, "/html/body/table/tr/td[1]/text()"));
 	}
 
@@ -131,7 +131,8 @@ public class PercentageColumnTest {
 		final ITableItem item = createItem(0, 0);
 		column.footer(td, item.getNode(), resources, root);
 		final Document doc = parseDoc();
-		assertEquals("n/a", support.findStr(doc, "/html/body/table/tr"));
+		assertEquals("не применимо",
+				support.findStr(doc, "/html/body/table/tr"));
 	}
 
 	@Test

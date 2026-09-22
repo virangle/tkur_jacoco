@@ -284,18 +284,31 @@ a:focus-visible {
   color:#ffffff;
   display:flex;
   justify-content:space-between;
+  flex-wrap:wrap;
   align-items:center;
   gap:24px;
 }
 
 .tkur-wordmark {
-  font-size:28px;
+  font-size:24px;
   font-weight:bold;
-  letter-spacing:2px;
+  line-height:1.35;
+  max-width:780px;
+  flex:1;
+}
+
+.tkur-logo {
+  width:190px;
+  height:auto;
+  flex-shrink:0;
+  padding:12px;
+  background:#ffffff;
+  border-radius:6px;
 }
 
 .tkur-product {
   text-align:right;
+  flex-shrink:0;
 }
 
 .tkur-product span {
@@ -452,7 +465,7 @@ pre.source :target {
 @media (max-width:540px) {
   .tkur-header { align-items:flex-start; flex-direction:column; gap:10px; }
   .tkur-product { text-align:left; }
-  .tkur-wordmark { font-size:24px; }
+  .tkur-wordmark { font-size:21px; }
   .breadcrumb .info { float:none; display:block; margin-bottom:8px; }
   .breadcrumb .info a { margin:0 16px 0 0; }
   h1 { font-size:23px; }

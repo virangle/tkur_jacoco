@@ -35,15 +35,15 @@ import org.jacoco.report.internal.html.resources.Styles;
  */
 public class SessionsPage extends ReportPage {
 
-	private static final String MSG_SESSIONS = "This coverage report is based "
-			+ "on execution data from the following sessions:";
+	private static final String MSG_SESSIONS = "Этот отчёт о покрытии основан "
+			+ "на данных выполнения следующих сессий:";
 
-	private static final String MSG_NO_SESSIONS = "No session information available.";
+	private static final String MSG_NO_SESSIONS = "Информация о сессиях отсутствует.";
 
-	private static final String MSG_EXECDATA = "Execution data for the "
-			+ "following classes is considered in this report:";
+	private static final String MSG_EXECDATA = "В этом отчёте учтены данные выполнения "
+			+ "следующих классов:";
 
-	private static final String MSG_NO_EXECDATA = "No execution data available.";
+	private static final String MSG_NO_EXECDATA = "Данные выполнения отсутствуют.";
 
 	private final List<SessionInfo> sessionInfos;
 
@@ -108,9 +108,9 @@ public class SessionsPage extends ReportPage {
 		final HTMLElement table = body.table(Styles.COVERAGETABLE);
 		{
 			final HTMLElement tr = table.thead().tr();
-			tr.td().text("Session");
-			tr.td().text("Start Time");
-			tr.td().text("Dump Time");
+			tr.td().text("Сессия");
+			tr.td().text("Время начала");
+			tr.td().text("Время сохранения");
 		}
 		final HTMLElement tbody = table.tbody();
 		for (final SessionInfo i : sessionInfos) {
@@ -125,8 +125,8 @@ public class SessionsPage extends ReportPage {
 		final HTMLElement table = body.table(Styles.COVERAGETABLE);
 		{
 			final HTMLElement tr = table.thead().tr();
-			tr.td().text("Class");
-			tr.td().text("Id");
+			tr.td().text("Класс");
+			tr.td().text("Идентификатор");
 		}
 		final HTMLElement tbody = table.tbody();
 		final ILanguageNames names = context.getLanguageNames();
@@ -155,7 +155,7 @@ public class SessionsPage extends ReportPage {
 	}
 
 	public String getLinkLabel() {
-		return "Sessions";
+		return "Сессии";
 	}
 
 }

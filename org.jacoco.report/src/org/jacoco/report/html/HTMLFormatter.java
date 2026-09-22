@@ -49,9 +49,15 @@ import org.jacoco.report.internal.html.table.Table;
  */
 public class HTMLFormatter implements IHTMLReportContext {
 
-	private ILanguageNames languageNames = new JavaNames();
+	private ILanguageNames languageNames = new JavaNames() {
+		@Override
+		public String getPackageName(final String vmname) {
+			return vmname.length() == 0 ? "пакет по умолчанию"
+					: super.getPackageName(vmname);
+		}
+	};
 
-	private Locale locale = Locale.getDefault();
+	private Locale locale = new Locale("ru", "RU");
 
 	private String footerText = "";
 
@@ -83,8 +89,8 @@ public class HTMLFormatter implements IHTMLReportContext {
 	}
 
 	/**
-	 * Sets the locale used for report rendering. The current default locale is
-	 * used by default.
+	 * Sets the locale used for numbers and dates. Russian (Russia) is used by
+	 * default. The HTML interface remains in Russian.
 	 *
 	 * @param locale
 	 *            locale used for report rendering
@@ -132,25 +138,25 @@ public class HTMLFormatter implements IHTMLReportContext {
 
 	private Table createTable() {
 		final Table t = new Table();
-		t.add("Element", null, new LabelColumn(), false);
-		t.add("Missed Instructions", Styles.BAR,
+		t.add("Элемент", null, new LabelColumn(), false);
+		t.add("Непокрытые инструкции", Styles.BAR,
 				new BarColumn(CounterEntity.INSTRUCTION, locale), true);
-		t.add("Cov.", Styles.CTR2,
+		t.add("Покрытие", Styles.CTR2,
 				new PercentageColumn(CounterEntity.INSTRUCTION, locale), false);
-		t.add("Missed Branches", Styles.BAR,
+		t.add("Непокрытые ветви", Styles.BAR,
 				new BarColumn(CounterEntity.BRANCH, locale), false);
-		t.add("Cov.", Styles.CTR2,
+		t.add("Покрытие", Styles.CTR2,
 				new PercentageColumn(CounterEntity.BRANCH, locale), false);
-		addMissedTotalColumns(t, "Cxty", CounterEntity.COMPLEXITY);
-		addMissedTotalColumns(t, "Lines", CounterEntity.LINE);
-		addMissedTotalColumns(t, "Methods", CounterEntity.METHOD);
-		addMissedTotalColumns(t, "Classes", CounterEntity.CLASS);
+		addMissedTotalColumns(t, "Сложность", CounterEntity.COMPLEXITY);
+		addMissedTotalColumns(t, "Строки", CounterEntity.LINE);
+		addMissedTotalColumns(t, "Методы", CounterEntity.METHOD);
+		addMissedTotalColumns(t, "Классы", CounterEntity.CLASS);
 		return t;
 	}
 
 	private void addMissedTotalColumns(final Table table, final String label,
 			final CounterEntity entity) {
-		table.add("Missed", Styles.CTR1,
+		table.add("Не покрыто", Styles.CTR1,
 				CounterColumn.newMissed(entity, locale), false);
 		table.add(label, Styles.CTR2, CounterColumn.newTotal(entity, locale),
 				false);

@@ -164,4 +164,14 @@ public class HTMLFormatterTest {
 		output.close();
 	}
 
+	@Test
+	public void testRussianDefaults() throws Exception {
+		assertEquals(new Locale("ru", "RU"), formatter.getLocale());
+		assertEquals("пакет по умолчанию",
+				formatter.getLanguageNames().getPackageName(""));
+		assertEquals("org.example",
+				formatter.getLanguageNames().getPackageName("org/example"));
+		output.close();
+	}
+
 }

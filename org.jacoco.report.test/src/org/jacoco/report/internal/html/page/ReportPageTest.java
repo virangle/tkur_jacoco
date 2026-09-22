@@ -97,7 +97,7 @@ public class ReportPageTest extends PageTestBase {
 		final Document doc = support.parse(output.getFile("Test.html"));
 
 		// language
-		assertEquals("en", support.findStr(doc, "/html/@lang"));
+		assertEquals("ru", support.findStr(doc, "/html/@lang"));
 
 		// style sheet
 		assertEquals("jacoco-resources/report.css", support.findStr(doc,
@@ -116,9 +116,14 @@ public class ReportPageTest extends PageTestBase {
 				"/html/body/div[@class='breadcrumb']/span[2]/@class"));
 
 		// Header
+		assertEquals("jacoco-resources/tkur.svg", support.findStr(doc,
+				"/html/body/div[@class='tkur-header']/img/@src"));
+		assertEquals("Логотип ТЕХКОНСУР", support.findStr(doc,
+				"/html/body/div[@class='tkur-header']/img/@alt"));
 		assertEquals("Test", support.findStr(doc, "/html/body/h1/text()"));
-		assertEquals("ТЕХКОНСУР", support.findStr(doc,
-				"/html/body/div[@class='tkur-header']/span/text()"));
+		assertEquals("Испытательная лаборатория ООО \"ТЕХКОНСУР\"",
+				support.findStr(doc,
+						"/html/body/div[@class='tkur-header']/span/text()"));
 		assertEquals("tkur_jacoco / 0.8.15", support.findStr(doc,
 				"//span[@class='tkur-product-name']/text()"));
 		assertEquals("width=device-width, initial-scale=1", support.findStr(doc,
@@ -137,8 +142,10 @@ public class ReportPageTest extends PageTestBase {
 		// Footer
 		assertEquals("CustomFooter",
 				support.findStr(doc, "/html/body/div[@class='footer']/text()"));
-		assertEquals("ООО «ТЕХКОНСУР» · tkur_jacoco", support.findStr(doc,
-				"//div[@class='footer']/span[@class='tkur-owner']/text()"));
+		assertEquals(
+				"Испытательная лаборатория ООО \"ТЕХКОНСУР\" · tkur_jacoco",
+				support.findStr(doc,
+						"//div[@class='footer']/span[@class='tkur-owner']/text()"));
 	}
 
 }

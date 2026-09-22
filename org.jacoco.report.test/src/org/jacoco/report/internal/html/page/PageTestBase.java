@@ -48,7 +48,7 @@ public abstract class PageTestBase {
 		rootFolder = new ReportOutputFolder(output);
 		final Resources resources = new Resources(rootFolder);
 		final Table table = new Table();
-		table.add("Element", null, new LabelColumn(), true);
+		table.add("Элемент", null, new LabelColumn(), true);
 		context = new IHTMLReportContext() {
 
 			public ILanguageNames getLanguageNames() {
@@ -68,7 +68,7 @@ public abstract class PageTestBase {
 			}
 
 			public ILinkable getSessionsPage() {
-				return new LinkableStub("sessions.html", "Sessions",
+				return new LinkableStub("sessions.html", "Сессии",
 						Styles.EL_SESSION);
 			}
 

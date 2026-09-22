@@ -51,6 +51,7 @@ public class ResourcesTest {
 	@Test
 	public void testCopyResources() throws IOException {
 		resources.copyResources();
+		output.assertFile("jacoco-resources/tkur.svg");
 		output.assertFile("jacoco-resources/branchfc.gif");
 		output.assertFile("jacoco-resources/branchnc.gif");
 		output.assertFile("jacoco-resources/branchpc.gif");

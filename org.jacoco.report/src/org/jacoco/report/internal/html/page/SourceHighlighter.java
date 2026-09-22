@@ -107,13 +107,13 @@ final class SourceHighlighter {
 		switch (branches.getStatus()) {
 		case ICounter.NOT_COVERED:
 			return span(pre, lineId, style, Styles.BRANCH_NOT_COVERED,
-					"All %2$d branches missed.", branches);
+					"Не покрыта ни одна ветвь. Всего ветвей: %2$d.", branches);
 		case ICounter.FULLY_COVERED:
 			return span(pre, lineId, style, Styles.BRANCH_FULLY_COVERED,
-					"All %2$d branches covered.", branches);
+					"Покрыты все ветви: %2$d.", branches);
 		case ICounter.PARTLY_COVERED:
 			return span(pre, lineId, style, Styles.BRANCH_PARTLY_COVERED,
-					"%1$d of %2$d branches missed.", branches);
+					"Не покрыто ветвей: %1$d из %2$d.", branches);
 		default:
 			return pre.span(style, lineId);
 		}

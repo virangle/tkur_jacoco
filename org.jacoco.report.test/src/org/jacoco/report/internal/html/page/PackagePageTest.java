@@ -108,12 +108,12 @@ public class PackagePageTest extends PageTestBase {
 
 		final Document doc = support.parse(output.getFile("index.html"));
 
-		// Expect "Source Files" links
+		// Expect "Исходные файлы" links
 		assertEquals("index.source.html", support.findStr(doc,
 				"/html/body/div[@class='breadcrumb']/span[@class='info']/a/@href"));
 		assertEquals("el_source", support.findStr(doc,
 				"/html/body/div[@class='breadcrumb']/span[@class='info']/a/@class"));
-		assertEquals("Source Files", support.findStr(doc,
+		assertEquals("Исходные файлы", support.findStr(doc,
 				"/html/body/div[@class='breadcrumb']/span[@class='info']/a"));
 		assertEquals("el_class", support.findStr(doc,
 				"/html/body/table[1]/tbody/tr[1]/td[1]/a/@class"));
@@ -146,9 +146,9 @@ public class PackagePageTest extends PageTestBase {
 		page = new PackagePage(node, null, sourceLocator, rootFolder, context);
 		page.render();
 
-		// Expect no "Source Files" link
+		// Expect no "Исходные файлы" link
 		final Document doc = support.parse(output.getFile("index.html"));
-		assertEquals("Sessions", support.findStr(doc,
+		assertEquals("Сессии", support.findStr(doc,
 				"/html/body/div[@class='breadcrumb']/span[@class='info']/a"));
 
 		// Expect no source files page:

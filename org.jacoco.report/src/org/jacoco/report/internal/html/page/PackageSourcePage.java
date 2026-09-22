@@ -116,7 +116,7 @@ public class PackageSourcePage extends TablePage<IPackageCoverage> {
 	@Override
 	protected void infoLinks(final HTMLElement span) throws IOException {
 		final String link = packagePage.getLink(folder);
-		span.a(link, Styles.EL_CLASS).text("Classes");
+		span.a(link, Styles.EL_CLASS).text("Классы");
 		super.infoLinks(span);
 	}
 

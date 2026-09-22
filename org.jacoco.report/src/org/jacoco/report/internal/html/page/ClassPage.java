@@ -86,18 +86,18 @@ public class ClassPage extends TablePage<IClassCoverage> {
 	protected void content(HTMLElement body) throws IOException {
 		if (getNode().isNoMatch()) {
 			body.p().text(
-					"A different version of class was executed at runtime.");
+					"Во время выполнения использовалась другая версия класса.");
 		}
 
 		if (getNode().getLineCounter().getTotalCount() == 0) {
 			body.p().text(
-					"Class files must be compiled with debug information to show line coverage.");
+					"Для отображения покрытия строк классы необходимо скомпилировать с отладочной информацией.");
 		}
 
 		final String sourceFileName = getNode().getSourceFileName();
 		if (sourceFileName == null) {
 			body.p().text(
-					"Class files must be compiled with debug information to link with source files.");
+					"Для перехода к исходным файлам классы необходимо скомпилировать с отладочной информацией.");
 
 		} else if (sourcePage == null) {
 			final String sourcePath;
@@ -106,8 +106,8 @@ public class ClassPage extends TablePage<IClassCoverage> {
 			} else {
 				sourcePath = sourceFileName;
 			}
-			body.p().text("Source file \"" + sourcePath
-					+ "\" was not found during generation of report.");
+			body.p().text("Исходный файл \"" + sourcePath
+					+ "\" не найден при создании отчёта.");
 		}
 
 		super.content(body);

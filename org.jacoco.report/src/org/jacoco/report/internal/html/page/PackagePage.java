@@ -97,7 +97,7 @@ public class PackagePage extends TablePage<IPackageCoverage> {
 	protected void infoLinks(final HTMLElement span) throws IOException {
 		if (sourceCoverageExists) {
 			final String link = packageSourcePage.getLink(folder);
-			span.a(link, Styles.EL_SOURCE).text("Source Files");
+			span.a(link, Styles.EL_SOURCE).text("Исходные файлы");
 		}
 		super.infoLinks(span);
 	}

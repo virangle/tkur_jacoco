@@ -72,7 +72,7 @@ public class ClassPageTest extends PageTestBase {
 
 		final Document doc = support.parse(output.getFile("Foo.html"));
 		assertEquals(
-				"Class files must be compiled with debug information to link with source files.",
+				"Для перехода к исходным файлам классы необходимо скомпилировать с отладочной информацией.",
 				support.findStr(doc, "/html/body/p[1]"));
 	}
 
@@ -86,7 +86,7 @@ public class ClassPageTest extends PageTestBase {
 
 		final Document doc = support.parse(output.getFile("Foo.html"));
 		assertEquals(
-				"Source file \"org/jacoco/example/Foo.java\" was not found during generation of report.",
+				"Исходный файл \"org/jacoco/example/Foo.java\" не найден при создании отчёта.",
 				support.findStr(doc, "/html/body/p[1]"));
 	}
 
@@ -104,7 +104,7 @@ public class ClassPageTest extends PageTestBase {
 
 		final Document doc = support.parse(output.getFile("Foo.html"));
 		assertEquals(
-				"Source file \"Foo.java\" was not found during generation of report.",
+				"Исходный файл \"Foo.java\" не найден при создании отчёта.",
 				support.findStr(doc, "/html/body/p[1]"));
 	}
 
@@ -130,7 +130,7 @@ public class ClassPageTest extends PageTestBase {
 
 		final Document doc = support.parse(output.getFile("Foo.html"));
 		assertEquals(
-				"Class files must be compiled with debug information to show line coverage.",
+				"Для отображения покрытия строк классы необходимо скомпилировать с отладочной информацией.",
 				support.findStr(doc, "/html/body/p[1]"));
 	}
 
@@ -144,7 +144,7 @@ public class ClassPageTest extends PageTestBase {
 		page.render();
 
 		final Document doc = support.parse(output.getFile("Foo.html"));
-		assertEquals("A different version of class was executed at runtime.",
+		assertEquals("Во время выполнения использовалась другая версия класса.",
 				support.findStr(doc, "/html/body/p[1]"));
 	}
 

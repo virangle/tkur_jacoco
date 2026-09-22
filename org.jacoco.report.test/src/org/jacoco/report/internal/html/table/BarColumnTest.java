@@ -83,7 +83,7 @@ public class BarColumnTest {
 	public void testFooter() throws Exception {
 		column.footer(td, createNode(15, 5), resources, root);
 		final Document doc = parseDoc();
-		assertEquals("15 of 20",
+		assertEquals("15 из 20",
 				support.findStr(doc, "/html/body/table/tr/td/text()"));
 	}
 

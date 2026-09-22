@@ -100,7 +100,7 @@ public class PackageSourcePageTest extends PageTestBase {
 				"/html/body/div[@class='breadcrumb']/span[@class='info']/a/@href"));
 		assertEquals("el_class", support.findStr(doc,
 				"/html/body/div[@class='breadcrumb']/span[@class='info']/a/@class"));
-		assertEquals("Classes", support.findStr(doc,
+		assertEquals("Классы", support.findStr(doc,
 				"/html/body/div[@class='breadcrumb']/span[@class='info']/a"));
 		assertEquals("el_source", support.findStr(doc,
 				"/html/body/table[1]/tbody/tr[1]/td[1]/a/@class"));

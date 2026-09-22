@@ -65,7 +65,7 @@ public class SessionsPageTest extends PageTestBase {
 	public void testGetLinkLabel() {
 		final SessionsPage page = new SessionsPage(noSessions, noExecutionData,
 				index, null, rootFolder, context);
-		assertEquals("Sessions", page.getLinkLabel());
+		assertEquals("Сессии", page.getLinkLabel());
 	}
 
 	@Test
@@ -75,9 +75,9 @@ public class SessionsPageTest extends PageTestBase {
 		page.render();
 		final Document doc = support
 				.parse(output.getFile("jacoco-sessions.html"));
-		assertEquals("No session information available.",
+		assertEquals("Информация о сессиях отсутствует.",
 				support.findStr(doc, "/html/body/p[1]"));
-		assertEquals("No execution data available.",
+		assertEquals("Данные выполнения отсутствуют.",
 				support.findStr(doc, "/html/body/p[2]"));
 	}
 
