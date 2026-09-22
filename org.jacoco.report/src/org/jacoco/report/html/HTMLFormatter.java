@@ -13,7 +13,9 @@
 package org.jacoco.report.html;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -60,6 +62,8 @@ public class HTMLFormatter implements IHTMLReportContext {
 	private Locale locale = new Locale("ru", "RU");
 
 	private String footerText = "";
+
+	private String creationTimestamp = "";
 
 	private String outputEncoding = "UTF-8";
 
@@ -166,6 +170,10 @@ public class HTMLFormatter implements IHTMLReportContext {
 		return footerText;
 	}
 
+	public String getCreationTimestamp() {
+		return creationTimestamp;
+	}
+
 	public ILinkable getSessionsPage() {
 		return sessionsPage;
 	}
@@ -193,6 +201,8 @@ public class HTMLFormatter implements IHTMLReportContext {
 	 */
 	public IReportVisitor createVisitor(final IMultiReportOutput output)
 			throws IOException {
+		creationTimestamp = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss Z",
+				Locale.US).format(new Date());
 		final ReportOutputFolder root = new ReportOutputFolder(output);
 		resources = new Resources(root);
 		resources.copyResources();

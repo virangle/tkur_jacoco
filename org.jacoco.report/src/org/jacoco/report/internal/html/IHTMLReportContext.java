@@ -53,6 +53,13 @@ public interface IHTMLReportContext {
 	String getFooterText();
 
 	/**
+	 * Returns the report creation timestamp, including the time zone offset.
+	 *
+	 * @return timestamp shared by all report pages
+	 */
+	String getCreationTimestamp();
+
+	/**
 	 * Returns the link to the sessions page.
 	 *
 	 * @return sessions page link

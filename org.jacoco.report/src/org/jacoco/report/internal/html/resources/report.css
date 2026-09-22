@@ -337,6 +337,13 @@ table.coverage td.bar img {
   font-weight:bold;
 }
 
+.tkur-created {
+  margin-top:4px;
+  color:#d3e5ff;
+  font-size:11px;
+  font-variant-numeric:tabular-nums;
+}
+
 .tkur-product-description {
   margin-top:2px;
   font-size:9px;
@@ -496,6 +503,7 @@ pre.source :target {
   body { padding:0; }
   .tkur-header { margin:0; padding:12px 0; color:#021d59; background:#ffffff; }
   .tkur-product-description { color:#425675; }
+  .tkur-created { color:#425675; }
   .breadcrumb { margin:0 0 20px; padding:8px 0; }
   .breadcrumb .info { display:none; }
   table.coverage { display:table; width:100%; box-shadow:none; font-size:9px; }

@@ -116,6 +116,8 @@ public class ReportPageTest extends PageTestBase {
 				"/html/body/div[@class='breadcrumb']/span[2]/@class"));
 
 		// Header
+		assertEquals("Сформирован: 22.09.2026 12:30:00 +0300",
+				support.findStr(doc, "//span[@class='tkur-created']/text()"));
 		assertEquals("jacoco-resources/report.svg", support.findStr(doc,
 				"/html/head/link[@rel='shortcut icon']/@href"));
 		assertEquals("image/svg+xml", support.findStr(doc,

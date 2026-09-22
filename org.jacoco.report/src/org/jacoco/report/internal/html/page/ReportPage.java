@@ -113,6 +113,8 @@ public abstract class ReportPage implements ILinkable {
 		final HTMLElement product = brand.div("tkur-product");
 		product.span("tkur-product-name").text("tkur_jacoco / 0.8.15");
 		product.span("tkur-product-description").text("ОТЧЁТ О ПОКРЫТИИ КОДА");
+		product.span("tkur-created")
+				.text("Сформирован: " + context.getCreationTimestamp());
 		final HTMLElement navigation = body.div(Styles.BREADCRUMB);
 		navigation.attr("id", "breadcrumb");
 		infoLinks(navigation.span(Styles.INFO));

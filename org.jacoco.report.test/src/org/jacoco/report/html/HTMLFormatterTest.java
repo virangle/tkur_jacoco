@@ -59,6 +59,17 @@ public class HTMLFormatterTest {
 		output.assertFile("group1/group/index.html");
 		output.assertFile("group1/group/bundle/index.html");
 		output.assertFile("bundle/index.html");
+		final String timestamp = formatter.getCreationTimestamp();
+		assertTrue(timestamp.matches(
+				"\\d{2}\\.\\d{2}\\.\\d{4} \\d{2}:\\d{2}:\\d{2} [+-]\\d{4}"));
+		for (String path : new String[] { "index.html",
+				"group1/group/bundle/index.html", "jacoco-sessions.html" }) {
+			final BufferedReader reader = new BufferedReader(
+					new InputStreamReader(output.getFileAsStream(path),
+							"UTF-8"));
+			assertTrue(reader.readLine().contains("Сформирован: " + timestamp));
+			reader.close();
+		}
 	}
 
 	@Test

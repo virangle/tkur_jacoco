@@ -67,6 +67,10 @@ public abstract class PageTestBase {
 				return "CustomFooter";
 			}
 
+			public String getCreationTimestamp() {
+				return "22.09.2026 12:30:00 +0300";
+			}
+
 			public ILinkable getSessionsPage() {
 				return new LinkableStub("sessions.html", "Сессии",
 						Styles.EL_SESSION);
