@@ -89,6 +89,9 @@ public abstract class ReportPage implements ILinkable {
 	 */
 	protected void head(final HTMLElement head) throws IOException {
 		head.meta("Content-Type", "text/html;charset=UTF-8");
+		final HTMLElement viewport = head.element("meta");
+		viewport.attr("name", "viewport");
+		viewport.attr("content", "width=device-width, initial-scale=1");
 		head.link("stylesheet",
 				context.getResources().getLink(folder, Resources.STYLESHEET),
 				"text/css");
@@ -100,11 +103,20 @@ public abstract class ReportPage implements ILinkable {
 
 	private void body(final HTMLElement body) throws IOException {
 		body.attr("onload", getOnload());
+		final HTMLElement brand = body.div("tkur-header");
+		brand.span("tkur-wordmark").text("ТЕХКОНСУР");
+		final HTMLElement product = brand.div("tkur-product");
+		product.span("tkur-product-name").text("tkur_jacoco / 0.8.15");
+		product.span("tkur-product-description").text("ОТЧЁТ О ПОКРЫТИИ КОДА");
 		final HTMLElement navigation = body.div(Styles.BREADCRUMB);
 		navigation.attr("id", "breadcrumb");
 		infoLinks(navigation.span(Styles.INFO));
 		breadcrumb(navigation, folder);
 		body.h1().text(getLinkLabel());
+		final HTMLElement legend = body.div("tkur-legend");
+		legend.span("tkur-covered").text("Покрыто");
+		legend.span("tkur-partial").text("Частично");
+		legend.span("tkur-missed").text("Не покрыто");
 		content(body);
 		footer(body);
 	}
@@ -153,6 +165,7 @@ public abstract class ReportPage implements ILinkable {
 		versioninfo.a(JaCoCo.HOMEURL).text("JaCoCo");
 		versioninfo.text(" ");
 		versioninfo.text(JaCoCo.VERSION);
+		footer.span("tkur-owner").text("ООО «ТЕХКОНСУР» · tkur_jacoco");
 		footer.text(context.getFooterText());
 	}
 

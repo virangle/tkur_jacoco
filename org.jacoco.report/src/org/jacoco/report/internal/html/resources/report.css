@@ -241,3 +241,236 @@ table.coverage tfoot td.ctr2 {
 .right {
   float:right;
 }
+
+/* tkur_jacoco: ООО «ТЕХКОНСУР». Palette: https://tkur.ru/.
+ * Coverage colors intentionally retain their upstream meaning.
+ * All assets are local; reports work without an Internet connection.
+ */
+html {
+  background:#f2f5fd;
+  color:#172b4d;
+}
+
+body {
+  margin:0;
+  padding:0 32px 24px;
+  line-height:1.5;
+}
+
+body, td {
+  font-family:Arial, "DejaVu Sans", sans-serif;
+  font-size:14px;
+}
+
+a {
+  color:#0941be;
+  text-decoration:none;
+}
+
+a:hover {
+  text-decoration:underline;
+}
+
+a:focus-visible {
+  outline:2px solid #0a42be;
+  outline-offset:3px;
+}
+
+.tkur-header {
+  margin:0 -32px;
+  padding:28px 32px;
+  background:#021d59;
+  border-bottom:4px solid #1a9ae2;
+  color:#ffffff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+
+.tkur-wordmark {
+  font-size:28px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.tkur-product {
+  text-align:right;
+}
+
+.tkur-product span {
+  display:block;
+}
+
+.tkur-product-name {
+  font-size:15px;
+  font-weight:bold;
+}
+
+.tkur-product-description {
+  margin-top:4px;
+  font-size:10px;
+  letter-spacing:1.8px;
+  color:#bfdfff;
+}
+
+.breadcrumb {
+  margin:0 -32px 28px;
+  padding:13px 32px;
+  border:0;
+  border-bottom:1px solid #d7e1f2;
+  background:#ffffff;
+  font-size:13px;
+  overflow-wrap:anywhere;
+}
+
+h1 {
+  margin:0 0 14px;
+  color:#021d59;
+  font-size:28px;
+  line-height:1.3;
+  overflow-wrap:anywhere;
+}
+
+.tkur-legend {
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  margin-bottom:24px;
+  color:#425675;
+  font-size:12px;
+}
+
+.tkur-legend span::before {
+  content:"";
+  display:inline-block;
+  width:9px;
+  height:9px;
+  margin-right:7px;
+  border-radius:50%;
+}
+
+.tkur-covered::before { background:#228644; }
+.tkur-partial::before { background:#c49316; }
+.tkur-missed::before { background:#cf3d49; }
+
+table.coverage {
+  width:100%;
+  display:block;
+  overflow-x:auto;
+  background:#ffffff;
+  box-shadow:0 2px 8px #021d5910;
+  font-variant-numeric:tabular-nums;
+}
+
+table.coverage thead {
+  background:#021d59;
+  color:#ffffff;
+}
+
+table.coverage thead td {
+  padding:13px 18px 13px 12px;
+  border-bottom:3px solid #1a9ae2;
+  font-size:12px;
+  font-weight:bold;
+}
+
+table.coverage thead td.bar,
+table.coverage thead td.ctr1 {
+  border-left:1px solid #324a7b;
+}
+
+table.coverage tbody td,
+table.coverage tfoot td {
+  padding:12px;
+  border-bottom:1px solid #e3eaf5;
+}
+
+table.coverage tbody tr:nth-child(even) {
+  background:#f7f9fe;
+}
+
+table.coverage tbody tr:hover {
+  background:#e7efff !important;
+}
+
+table.coverage tfoot {
+  background:#e5edfc;
+  color:#021d59;
+  font-weight:bold;
+}
+
+pre.source {
+  margin:0;
+  padding:18px 8px;
+  border:1px solid #d7e1f2;
+  border-radius:4px;
+  background:#ffffff;
+  overflow-x:auto;
+  font:13px/1.65 "DejaVu Sans Mono", Consolas, monospace;
+  tab-size:4;
+}
+
+pre.source li {
+  border-color:#d7e1f2;
+  color:#637895;
+}
+
+pre.source :target {
+  outline:2px solid #0a42be;
+  outline-offset:2px;
+}
+
+.footer {
+  margin-top:32px;
+  padding-top:16px;
+  border-top:1px solid #cbd8ed;
+  color:#526580;
+  font-size:12px;
+  overflow-wrap:anywhere;
+}
+
+.footer a {
+  color:#0941be;
+}
+
+.tkur-owner {
+  display:block;
+  margin-bottom:5px;
+  color:#021d59;
+  font-weight:bold;
+}
+
+@media (max-width:900px) {
+  body { padding:0 16px 20px; }
+  .tkur-header { margin:0 -16px; padding:24px 16px; }
+  .breadcrumb { margin:0 -16px 24px; padding:12px 16px; }
+  table.coverage { display:block; overflow-x:auto; }
+  table.coverage td:first-child { min-width:180px; }
+}
+
+@media (max-width:540px) {
+  .tkur-header { align-items:flex-start; flex-direction:column; gap:10px; }
+  .tkur-product { text-align:left; }
+  .tkur-wordmark { font-size:24px; }
+  .breadcrumb .info { float:none; display:block; margin-bottom:8px; }
+  .breadcrumb .info a { margin:0 16px 0 0; }
+  h1 { font-size:23px; }
+  .footer .right { float:none; display:block; margin-bottom:10px; }
+}
+
+@media print {
+  html, body { background:#ffffff; }
+  body { padding:0; }
+  .tkur-header { margin:0; padding:12px 0; color:#021d59; background:#ffffff; }
+  .tkur-product-description { color:#425675; }
+  .breadcrumb { margin:0 0 20px; padding:8px 0; }
+  .breadcrumb .info { display:none; }
+  table.coverage { display:table; width:100%; box-shadow:none; font-size:9px; }
+  table.coverage td { font-size:9px; min-width:0 !important; }
+  table.coverage thead { color:#021d59; background:#e5edfc; }
+  table.coverage thead td, table.coverage tbody td,
+  table.coverage tfoot td { padding:5px; }
+  table.coverage tr { break-inside:avoid; }
+  pre.source { overflow:visible; }
+}

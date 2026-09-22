@@ -1,5 +1,91 @@
-JaCoCo Java Code Coverage Library
-=================================
+# tkur_jacoco 0.8.15
+
+**tkur_jacoco — проект ООО «ТЕХКОНСУР» для облегчения проведения
+сертификационных испытаний ФСТЭК России.**
+
+Форк [JaCoCo 0.8.15](https://github.com/jacoco/jacoco/releases/tag/v0.8.15)
+с фирменным оформлением HTML-отчётов. Это не заявление о сертификации
+инструмента или автоматическом соответствии требованиям ФСТЭК России.
+
+## Отличия от JaCoCo
+
+- Шапка ТЕХКОНСУР, название инструмента и фирменный подвал на всех страницах.
+- Синие таблицы, навигация, оформление исходников, адаптация к узкому экрану
+  и печати. Широкие таблицы прокручиваются горизонтально.
+- Палитра [официального сайта](https://tkur.ru/): `#021D59`, `#0A42BE`,
+  `#1A9AE2`, `#F2F5FD`. Надпись в шапке — текст, не копия официального логотипа.
+- Зелёный, красный и жёлтый сохраняют смысл покрытия. Есть русская легенда.
+- Все ресурсы локальные: просмотр HTML не требует интернета.
+
+Инструментация, формат `.exec`, расчёт метрик, XML/CSV и команды CLI не
+изменены. Английские названия колонок JaCoCo сохранены. Изменения находятся
+в модуле `org.jacoco.report`, поэтому применяются и к встроенному HTMLFormatter.
+
+Основа: upstream commit `6c5260a192eaa535e4a519771d530781cbac9136`.
+Редакция форка: `0.8.15-tkur.1`. Внутренние версии и Maven-координаты upstream
+сохранены ради совместимости; `version` CLI показывает JaCoCo 0.8.15.
+Не публикуйте эти сборки под координатами оригинала в Maven Central.
+
+## Сборка
+
+Нужны JDK 21+ и доступ к Maven Central при первой сборке. Maven 3.9.16
+скачивается wrapper-скриптом с проверкой SHA-256.
+
+```bash
+JAVA_HOME=/path/to/jdk-21 bash scripts/build-tkur.sh
+```
+
+Скрипт запускает тесты report/CLI, собирает артефакты в `target/dist/`:
+
+- `tkur_jacococli.jar` — самостоятельный CLI со всеми зависимостями;
+- `tkur_jacocoagent.jar` — агент сбора покрытия (логика upstream без изменений);
+- `tkur_jacoco_report.jar` — библиотека генерации отчётов, не standalone;
+- `tkur_jacoco_report-sources.jar` — исходники библиотеки;
+- `SHA256SUMS`, `README.md`, `LICENSE.md`.
+
+Не запускайте `mvn install` в общем локальном репозитории, если не хотите
+заменить стандартные артефакты JaCoCo той же версии. Для интеграции Maven/Ant
+используйте изолированный репозиторий либо готовый CLI.
+
+## Использование
+
+Можно использовать уже имеющийся файл покрытия, в том числе из Jazzer:
+
+```bash
+java -jar target/dist/tkur_jacococli.jar report coverage.exec \
+  --classfiles application.jar \
+  --sourcefiles src/main/java \
+  --name 'Отчёт об испытаниях' \
+  --html report \
+  --xml report.xml
+```
+
+Открыть `report/index.html`. Классы должны соответствовать тем, на которых
+собиралось покрытие. Исходники нужны для построчной навигации, но не для метрик.
+`--classfiles` можно повторять для нескольких JAR или каталогов классов.
+
+Сбор покрытия обычного Java-приложения:
+
+```bash
+java -javaagent:target/dist/tkur_jacocoagent.jar=destfile=coverage.exec -jar application.jar
+```
+
+## Проверки
+
+Проверены 296 тестов генератора отчётов и 33 теста CLI. На Apache Commons
+Compress 1.27.1 (486 классов, покрытие из tkur_jazzer) XML и CSV побайтно
+совпали с оригинальным JaCoCo 0.8.15. В Chromium проверены сортировка,
+переходы к исходникам, сессии, локальные ресурсы, узкий экран и печать.
+
+## Лицензия и upstream
+
+Сохранена [Eclipse Public License 2.0](LICENSE.md), исходная история Git
+и уведомления об авторстве. Изменения форка также распространяются по EPL-2.0.
+JaCoCo — проект Mountainminds GmbH & Co. KG и участников upstream.
+
+---
+
+## JaCoCo Java Code Coverage Library (upstream)
 
 [![Build Status](https://dev.azure.com/jacoco-org/JaCoCo/_apis/build/status/JaCoCo?branchName=master)](https://dev.azure.com/jacoco-org/JaCoCo/_build/latest?definitionId=1&branchName=master)
 [![Maven Central](https://img.shields.io/maven-central/v/org.jacoco/jacoco.svg)](https://central.sonatype.com/namespace/org.jacoco)
