@@ -116,6 +116,10 @@ public class ReportPageTest extends PageTestBase {
 				"/html/body/div[@class='breadcrumb']/span[2]/@class"));
 
 		// Header
+		assertEquals("jacoco-resources/report.svg", support.findStr(doc,
+				"/html/head/link[@rel='shortcut icon']/@href"));
+		assertEquals("image/svg+xml", support.findStr(doc,
+				"/html/head/link[@rel='shortcut icon']/@type"));
 		assertEquals("jacoco-resources/tkur.svg", support.findStr(doc,
 				"/html/body/div[@class='tkur-header']/img/@src"));
 		assertEquals("Логотип ТЕХКОНСУР", support.findStr(doc,

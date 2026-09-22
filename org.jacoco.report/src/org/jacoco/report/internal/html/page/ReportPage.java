@@ -96,8 +96,8 @@ public abstract class ReportPage implements ILinkable {
 				context.getResources().getLink(folder, Resources.STYLESHEET),
 				"text/css");
 		head.link("shortcut icon",
-				context.getResources().getLink(folder, "report.gif"),
-				"image/gif");
+				context.getResources().getLink(folder, "report.svg"),
+				"image/svg+xml");
 		head.title().text(getLinkLabel());
 	}
 

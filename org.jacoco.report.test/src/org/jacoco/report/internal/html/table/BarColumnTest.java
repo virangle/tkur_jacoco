@@ -99,7 +99,7 @@ public class BarColumnTest {
 				support.findStr(doc, "count(/html/body/table/tr[1]/td/img)"));
 
 		// red bar
-		assertEquals("jacoco-resources/redbar.gif",
+		assertEquals("jacoco-resources/redbar.svg",
 				support.findStr(doc, "/html/body/table/tr[1]/td/img[1]/@src"));
 		assertEquals("15",
 				support.findStr(doc, "/html/body/table/tr[1]/td/img[1]/@alt"));
@@ -107,7 +107,7 @@ public class BarColumnTest {
 				"/html/body/table/tr[1]/td/img[1]/@width"));
 
 		// green bar
-		assertEquals("jacoco-resources/greenbar.gif",
+		assertEquals("jacoco-resources/greenbar.svg",
 				support.findStr(doc, "/html/body/table/tr[1]/td/img[2]/@src"));
 		assertEquals("5",
 				support.findStr(doc, "/html/body/table/tr[1]/td/img[2]/@alt"));
@@ -126,7 +126,7 @@ public class BarColumnTest {
 				support.findStr(doc, "count(/html/body/table/tr[1]/td/img)"));
 
 		// red bar
-		assertEquals("jacoco-resources/redbar.gif",
+		assertEquals("jacoco-resources/redbar.svg",
 				support.findStr(doc, "/html/body/table/tr[1]/td/img[1]/@src"));
 		assertEquals("20",
 				support.findStr(doc, "/html/body/table/tr[1]/td/img[1]/@alt"));
@@ -145,7 +145,7 @@ public class BarColumnTest {
 				support.findStr(doc, "count(/html/body/table/tr[1]/td/img)"));
 
 		// red bar
-		assertEquals("jacoco-resources/greenbar.gif",
+		assertEquals("jacoco-resources/greenbar.svg",
 				support.findStr(doc, "/html/body/table/tr[1]/td/img[1]/@src"));
 		assertEquals("20",
 				support.findStr(doc, "/html/body/table/tr[1]/td/img[1]/@alt"));

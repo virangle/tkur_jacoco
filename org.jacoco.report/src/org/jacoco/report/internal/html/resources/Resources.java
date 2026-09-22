@@ -38,10 +38,10 @@ public class Resources {
 	public static final String SORT_SCRIPT = "sort.js";
 
 	/** The name of the red part of the coverage bar */
-	public static final String REDBAR = "redbar.gif";
+	public static final String REDBAR = "redbar.svg";
 
 	/** The name of the green part of the coverage bar */
-	public static final String GREENBAR = "greenbar.gif";
+	public static final String GREENBAR = "greenbar.svg";
 
 	private final ReportOutputFolder folder;
 
@@ -102,20 +102,21 @@ public class Resources {
 	public void copyResources() throws IOException {
 		copyResource(STYLESHEET);
 		copyResource("tkur.svg");
-		copyResource("report.gif");
-		copyResource("group.gif");
-		copyResource("bundle.gif");
-		copyResource("package.gif");
-		copyResource("source.gif");
-		copyResource("class.gif");
-		copyResource("method.gif");
-		copyResource("session.gif");
-		copyResource("sort.gif");
-		copyResource("up.gif");
-		copyResource("down.gif");
-		copyResource("branchfc.gif");
-		copyResource("branchnc.gif");
-		copyResource("branchpc.gif");
+		copyResource("lucide-LICENSE.txt");
+		copyResource("report.svg");
+		copyResource("group.svg");
+		copyResource("bundle.svg");
+		copyResource("package.svg");
+		copyResource("source.svg");
+		copyResource("class.svg");
+		copyResource("method.svg");
+		copyResource("session.svg");
+		copyResource("sort.svg");
+		copyResource("up.svg");
+		copyResource("down.svg");
+		copyResource("branchfc.svg");
+		copyResource("branchnc.svg");
+		copyResource("branchpc.svg");
 		copyResource(REDBAR);
 		copyResource(GREENBAR);
 		copyResource(PRETTIFY_STYLESHEET);

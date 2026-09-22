@@ -23,56 +23,56 @@ h1 {
 
 .el_report {
   padding-left:18px;
-  background-image:url(report.gif);
+  background-image:url(report.svg);
   background-position:left center;
   background-repeat:no-repeat;
 }
 
 .el_group {
   padding-left:18px;
-  background-image:url(group.gif);
+  background-image:url(group.svg);
   background-position:left center;
   background-repeat:no-repeat;
 }
 
 .el_bundle {
   padding-left:18px;
-  background-image:url(bundle.gif);
+  background-image:url(bundle.svg);
   background-position:left center;
   background-repeat:no-repeat;
 }
 
 .el_package {
   padding-left:18px;
-  background-image:url(package.gif);
+  background-image:url(package.svg);
   background-position:left center;
   background-repeat:no-repeat;
 }
 
 .el_class {
   padding-left:18px;
-  background-image:url(class.gif);
+  background-image:url(class.svg);
   background-position:left center;
   background-repeat:no-repeat;
 }
 
 .el_source {
   padding-left:18px;
-  background-image:url(source.gif);
+  background-image:url(source.svg);
   background-position:left center;
   background-repeat:no-repeat;
 }
 
 .el_method {
   padding-left:18px;
-  background-image:url(method.gif);
+  background-image:url(method.svg);
   background-position:left center;
   background-repeat:no-repeat;
 }
 
 .el_session {
   padding-left:18px;
-  background-image:url(session.gif);
+  background-image:url(session.svg);
   background-position:left center;
   background-repeat:no-repeat;
 }
@@ -106,7 +106,7 @@ pre.source span.pc {
 }
 
 pre.source span.bfc {
-  background-image: url(branchfc.gif);
+  background-image: url(branchfc.svg);
   background-repeat: no-repeat;
   background-position: 2px center;
 }
@@ -116,7 +116,7 @@ pre.source span.bfc:hover {
 }
 
 pre.source span.bnc {
-  background-image: url(branchnc.gif);
+  background-image: url(branchnc.svg);
   background-repeat: no-repeat;
   background-position: 2px center;
 }
@@ -126,7 +126,7 @@ pre.source span.bnc:hover {
 }
 
 pre.source span.bpc {
-  background-image: url(branchpc.gif);
+  background-image: url(branchpc.svg);
   background-repeat: no-repeat;
   background-position: 2px center;
 }
@@ -166,17 +166,17 @@ table.coverage thead td.ctr2 {
 
 table.coverage thead td.sortable {
   cursor:pointer;
-  background-image:url(sort.gif);
+  background-image:url(sort.svg);
   background-position:right center;
   background-repeat:no-repeat;
 }
 
 table.coverage thead td.up {
-  background-image:url(up.gif);
+  background-image:url(up.svg);
 }
 
 table.coverage thead td.down {
-  background-image:url(down.gif);
+  background-image:url(down.svg);
 }
 
 table.coverage tbody td {
@@ -304,6 +304,24 @@ a:focus-visible {
   padding:12px;
   background:#ffffff;
   border-radius:6px;
+}
+
+.el_report, .el_group, .el_bundle, .el_package,
+.el_class, .el_source, .el_method, .el_session {
+  background-size:16px 16px;
+  padding-left:23px;
+}
+
+table.coverage thead td.sortable {
+  background-size:13px 13px;
+}
+
+pre.source span.bfc, pre.source span.bnc, pre.source span.bpc {
+  background-size:12px 12px;
+}
+
+table.coverage td.bar img {
+  vertical-align:middle;
 }
 
 .tkur-product {
