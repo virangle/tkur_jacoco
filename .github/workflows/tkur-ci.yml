@@ -1,0 +1,24 @@
+name: tkur_jacoco
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: actions/setup-java@be666c2fcd27ec809703dec50e508c2fdc7f6654
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Build and test
+        run: bash scripts/build-tkur.sh
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: tkur_jacoco
+          path: target/dist/
+          if-no-files-found: error
